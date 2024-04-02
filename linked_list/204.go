@@ -8,14 +8,20 @@ package linked_list
  * }
  */
 func swapPairs(head *ListNode) *ListNode {
-	cur := head
-	if cur.Next != nil {
-		next := cur.Next
-		nextNext := next.Next
-		next.Next = cur
-		cur.Next = nextNext
-		cur = nextNext
+	dummy := &ListNode{
+		Val:  0,
+		Next: head,
 	}
 
-	return head
+	pre := dummy
+	for head != nil && head.Next != nil {
+		pre.Next = head.Next
+		next := head.Next.Next
+		head.Next.Next = head
+		head.Next = next
+		pre = head
+		head = next
+	}
+
+	return dummy.Next
 }
