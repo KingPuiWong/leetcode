@@ -8,19 +8,14 @@ package hash
 magazine 中的每个字符只能在 ransomNote 中使用一次。
 */
 func canConstruct(ransomNote string, magazine string) bool {
-	magMap := make(map[int]int)
+	magMap := make(map[int32]int)
 	for _, v := range magazine {
-		magMap[int(v)]++
+		magMap[v-'a']++
 	}
 
 	for _, v := range ransomNote {
-		if value, exist := magMap[int(v)]; exist {
-			if value >= 1 {
-				magMap[int(v)]--
-			} else {
-				return false
-			}
-		} else {
+		magMap[v-'a']--
+		if magMap[v-'a'] < 0 {
 			return false
 		}
 	}
