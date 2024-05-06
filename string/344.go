@@ -1,4 +1,4 @@
-package strings
+package string
 
 /*
 编写一个函数，其作用是将输入的字符串反转过来。
