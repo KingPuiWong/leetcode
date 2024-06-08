@@ -9,6 +9,10 @@ package binary_tree
  * }
  */
 
+/*
+	前序遍历
+*/
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode

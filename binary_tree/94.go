@@ -1,5 +1,9 @@
 package binary_tree
 
+/*
+中序遍历
+*/
+
 func inorderTraversal(root *TreeNode) []int {
 	var res []int
 	traversal := func(node *TreeNode) {}

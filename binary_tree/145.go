@@ -1,5 +1,9 @@
 package binary_tree
 
+/*
+后序遍历
+*/
+
 func postorderTraversal(root *TreeNode) []int {
 	var res []int
 	reversal := func(node *TreeNode) {}
