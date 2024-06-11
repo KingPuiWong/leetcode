@@ -73,4 +73,6 @@ res = append(res,node.Val)
 traversal(node.Left)
 traversal(node.Right)
 ```
+## 二叉树的层序遍历
+队列先进先出，符合一层一层遍历的逻辑，而用栈先进后出适合模拟深度优先遍历也就是递归的逻辑
 
